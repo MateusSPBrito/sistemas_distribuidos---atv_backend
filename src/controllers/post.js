@@ -3,6 +3,7 @@ const Post = require("../models/post")
 class PostController {
     async create(req, res) {
         const file = req.file
+        console.log(req.body)
         const newPost = await Post.create({
             name: file.filename,
             description: req.body.description
